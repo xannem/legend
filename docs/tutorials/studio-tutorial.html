@@ -475,7 +475,7 @@ Join EmployeeCountry(EmployeeTable.country_id = CountryTable.id)
 <h2><a class="anchor" aria-hidden="true" id="create-a-service"></a><a href="#create-a-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Service</h2>
 <p>Build services on top of data queries to consume modeled data systematically. To create a service select <strong>New Service</strong> from the drop down menu to launch the <strong>Service Editor</strong>.</p>
 <h3><a class="anchor" aria-hidden="true" id="general-tab"></a><a href="#general-tab" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General Tab</h3>
-<p>In the <strong>General</strong> tab of the Service Editor, users can specify metadata of their service including the service URL, documentation and owners. URL parameters can be directly defined within the {} sytnax.</p>
+<p>In the <strong>General</strong> tab of the Service Editor, users can specify metadata of their service including the service URL, documentation and owners. URL parameters can be directly defined within the {&quot;{&quot;}{&quot;}&quot;} sytnax.</p>
 <p><img src="../assets/service-editor-general.JPG" alt="Service Editor - General"></p>
 <h3><a class="anchor" aria-hidden="true" id="execution-tab"></a><a href="#execution-tab" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execution Tab</h3>
 <p>In the execution tab, users can create and edit their service query. By hitting the pencil icon button, users can edit the query using the <a href="/legend/docs/tutorials/query-tutorial">Query Builder</a>. Users can make changes to the query either in the user-friendly form mode or in text mode.</p>
@@ -557,11 +557,13 @@ the foundation for the properties used in the service. e.g. As shown in the vide
 <h4><a class="anchor" aria-hidden="true" id="sections"></a><a href="#sections" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sections</h4>
 <p>Each file format is defined by a schema (a single entry in a Legend SchemaSet). Each schema consists of one or more sections. A section is defined in
 grammar as:</p>
-<pre><code class="hljs css language-Legend">section section_name:<span class="hljs-type"> driver_type
+<pre><code class="hljs css language-Legend">
+section section_name:<span class="hljs-type"> driver_type
 </span>{
   properties
   record_definition
 }
+
 </code></pre>
 <p>The <code>section_name</code> provides a name for the section and must be unique within a schema.</p>
 <p>The <code>driver_type</code> defines the type of data contained in the section. See below for details of the core driver types available.</p>
@@ -570,16 +572,22 @@ property specified is terminated by a semicolon (<code>;</code>). See example be
 <p>A <code>record_definition</code> may be given for driver types that support one.</p>
 <h4><a class="anchor" aria-hidden="true" id="record-definitions"></a><a href="#record-definitions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Record definitions</h4>
 <p>A record definition is specified as:</p>
-<pre><code class="hljs css language-Legend">Record
+<pre><code class="hljs css language-Legend">
+Record
 {
   record_fields
 }
+
 </code></pre>
 <p>Where a <code>record_field</code> is:</p>
-<pre><code class="hljs css language-Legend">field_name:<span class="hljs-type"> data_type(arguments)
+<pre><code class="hljs css language-Legend">
+field_name:<span class="hljs-type"> data_type(arguments)
+
 </span></code></pre>
 <p>or</p>
-<pre><code class="hljs css language-Legend">field_name {address}:<span class="hljs-type"> data_type(arguments)
+<pre><code class="hljs css language-Legend">
+field_name {address}:<span class="hljs-type"> data_type(arguments)
+
 </span></code></pre>
 <p>dependent on whether the driver type is self-describing (without address) or not (with address).</p>
 <p>The <code>field_name</code> is the field's name. For self-describing drivers this will be the name of the field exactly as it appears in the file (for example the heading of the
@@ -782,7 +790,8 @@ Options are:</p>
 <li>a column headings row</li>
 <li>data rows</li>
 </ul>
-<pre><code class="hljs css language-Legend">section header: ImmaterialLines
+<pre><code class="hljs css language-Legend">
+section header: ImmaterialLines
 {
   scope.forNumberOfLines: 1;
 }
@@ -801,10 +810,12 @@ section data: DelimitedWithHeadings
     Age: INTEGER(optional);
   }
 }
+
 </code></pre>
 <p>This example defines a pipe-delimited file without headers.
 Columns are therefore addressed positionally:</p>
-<pre><code class="hljs css language-Legend">section data:<span class="hljs-type"> DelimitedWithoutHeadings
+<pre><code class="hljs css language-Legend">
+section data:<span class="hljs-type"> DelimitedWithoutHeadings
 </span>{
   scope.default;
   delimiter:<span class="hljs-type"> '|'</span>;
@@ -816,6 +827,7 @@ Columns are therefore addressed positionally:</p>
     Age {<span class="hljs-number">3</span>}:<span class="hljs-type"> INTEGER(optional)</span>;
   }
 }
+
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="review-and-commit-changes"></a><a href="#review-and-commit-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Review and Commit Changes</h2>
 <p>Legend is integrated with the software development lifecycle (SDLC) supported by GitLab, which lets you review and commit changes.</p>
